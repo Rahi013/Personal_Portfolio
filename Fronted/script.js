@@ -22,12 +22,12 @@ if (form) {
     })
       .then((res) => res.json())
       .then((data) => {
-        responseMsg.textContent = data.message || "Thank you! Your message has been sent.";
+        responseMsg.textContent = data.message || "Message sent!";
         form.reset();
       })
       .catch((err) => {
-        console.error(err);
         responseMsg.textContent = "Something went wrong!";
+        console.error(err);
       });
   });
 }
@@ -156,12 +156,11 @@ function submitHireForm(event) {
   })
     .then((res) => res.json())
     .then((data) => {
-      alert(data.message || "Message sent successfully!");
+      responseMsg.textContent = data.message || "Message sent!";
       form.reset();
-      closeHireModal();
     })
     .catch((err) => {
-      alert("Something went wrong!");
+      responseMsg.textContent = "Something went wrong!";
       console.error(err);
     });
 }
