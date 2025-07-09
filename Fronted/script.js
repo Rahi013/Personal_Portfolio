@@ -15,19 +15,19 @@ if (form) {
       message: form.message.value,
     };
 
-    fetch("https://rahi-backend-gvud.onrender.com/send", {
+    fetch("https://rahi-backend-gvud.onrender.com/send",  {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     })
       .then((res) => res.json())
       .then((data) => {
-        responseMsg.textContent = data.message || "Message sent!";
+        responseMsg.textContent = data.message || "Thank you! Your message has been sent.";
         form.reset();
       })
       .catch((err) => {
-        responseMsg.textContent = "Something went wrong!";
         console.error(err);
+        responseMsg.textContent = "Something went wrong!";
       });
   });
 }
@@ -149,18 +149,19 @@ function submitHireForm(event) {
     message: inputs[2].value,
   };
 
-  fetch("https://rahi-backend-gvud.onrender.com/send", {
+  fetch("https://rahi-backend-gvud.onrender.com/send",  {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(formData),
   })
     .then((res) => res.json())
     .then((data) => {
-      responseMsg.textContent = data.message || "Message sent!";
+      alert(data.message || "Message sent successfully!");
       form.reset();
+      closeHireModal();
     })
     .catch((err) => {
-      responseMsg.textContent = "Something went wrong!";
+      alert("Something went wrong!");
       console.error(err);
     });
 }
