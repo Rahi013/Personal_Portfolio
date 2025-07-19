@@ -1002,3 +1002,82 @@ textarea:focus {
 .hire-form textarea {
     resize: vertical;
 }
+
+/* style.css */
+
+/* Default Desktop View (Sidebar Left) */
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background: #0d0d0d;
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 15px 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 15px;
+}
+
+/* ✅ Responsive Mobile View */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-header {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .footer-icons {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
